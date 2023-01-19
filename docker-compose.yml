@@ -1,6 +1,13 @@
 version: '3.6'
 
 services:
+  api:
+    build: api
+    depends_on:
+      - rabbitmq
+      - redis
+    ports:
+      - "8000:8000"
 
   rabbitmq:
     image: rabbitmq:3.7-management
